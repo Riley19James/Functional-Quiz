@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./assets/stylesheet.css">
+</head>
+<body>
+  <h1>Ultimate Fighter Championship Quiz</h1>
+  <div id="quiz-container">
+    <h2 id="question">
+      <p class="instructions">Instructions
+      <li>Six questions</li>
+      <li>60 second timer, every question you get INCORRECT 10 seconds subtracted form timer</li>
+      <li>When complete type initials</li>
+    </p>
+    </h2>
+    <ul id="choices">
+      <!-- Answer choices will be dynamically populated here -->
+    </ul>
+    <div id="timer">Time: <span id="time">0</span></div>
+    <button id="start-btn">Start Quiz</button>
+  </div>
+  <div id="game-over" class="hide">
+    <h2>Game Over!</h2>
+    <form id="score-form">
+      <label for="initials">Enter your initials:</label>
+      <input type="text" id="initials" maxlength="3" required>
+      <button type="submit">Save Score</button>
+    </form>
+  </div>
+  <div id="high-score" class="hide">
+    <h2>High Scores</h2>
+    <p id="high-score-text"></p>
+  </div>
+  
+  <script src="./assets/script.js"></script>
+</body>
+</html>

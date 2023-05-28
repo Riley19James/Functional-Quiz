@@ -1,0 +1,145 @@
+body {
+  font-family: 'Manrope', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #160505;
+  color: #000000;
+}
+
+h1 {
+  text-align: center;
+  color: #c72311;
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+
+
+#start-btn {
+  padding: 10px 20px;
+  background-color: #9c2310;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+#start-btn:hover {
+  background-color: #e74c3c;
+}
+
+#quiz-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #00000081;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+}
+
+#question {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#choices {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#choices li {
+  margin-bottom: 10px;
+}
+
+#choices button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+}
+
+#timer {
+  text-align: right;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#game-over {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+#game-over h2 {
+  margin-bottom: 20px;
+}
+
+#score-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#score-form input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#score-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#score-form button:hover {
+  background-color: #555;
+}
+
+#high-score {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #000;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+#high-score h2 {
+  margin-bottom: 20px;
+}
+
+#high-score ol {
+  list-style-type: decimal;
+  padding: 0;
+  margin: 0;
+}
+
+#high-score li {
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
