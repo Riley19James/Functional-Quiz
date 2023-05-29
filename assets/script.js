@@ -133,39 +133,37 @@ function endQuiz() {
   displayHighScores();
 }
 
-function getHighScore() {
-  const highScore = localStorage.getItem("highScore");
-  return highScore ? JSON.parse(highScore) : null;
+function getHighScores() {
+  const highScoresJSON = localStorage.getItem("highScores");
+  return highScoresJSON ? JSON.parse(highScoresJSON) : [];
 }
+
 
 function saveScore(event) {
   event.preventDefault();
   const initials = initialsInput.value;
   const score = time;
 
-  const highScore = getHighScore();
-  if (!highScore || score > highScore.score) {
-    const newHighScore = {
-      initials: initials,
-      score: score,
-    };
-    localStorage.setItem("highScore", JSON.stringify(newHighScore));
-    highScoreText.textContent = `High Score: ${initials} - ${score}`;
-  }
+  const highScores = getHighScores();
 
-  const scoreText = document.getElementById("score-text");
-  const initialsText = document.getElementById("initials-text");
-  scoreText.textContent = score;
-  initialsText.textContent = initials;
+  const newScore = {
+    initials: initials,
+    score: score,
+  };
 
-  scoreForm.classList.add("hide");
-  document.getElementById("user-score").classList.remove("hide");
+  highScores.push(newScore);
+
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+  displayHighScores(); 
+
+  const highScoreText = document.getElementById("high-score-text");
+  highScoreText.textContent = `High Score: ${initials} - ${score}`;
 
   initialsInput.disabled = true;
   scoreForm.querySelector("button").disabled = true;
-
-  displayHighScores();
 }
+
 
 function restartQuiz() {
   window.location.href = "index.html";
@@ -196,5 +194,26 @@ function getHighScores() {
   const highScoresJSON = localStorage.getItem("highScores");
   return highScoresJSON ? JSON.parse(highScoresJSON) : [];
 }
+
+function displayHighScores() {
+  const highScores = getHighScores();
+  console.log(highScores); 
+  highScoreList.innerHTML = "";
+
+  const scoresWithInitials = highScores.filter(score => score.initials);
+
+  if (scoresWithInitials.length > 0) {
+    scoresWithInitials.forEach((score) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${score.initials} - ${score.score}`;
+      highScoreList.appendChild(listItem);
+    });
+  } else {
+    const listItem = document.createElement("li");
+    listItem.textContent = "No high scores with initials yet.";
+    highScoreList.appendChild(listItem);
+  }
+}
+
 
 displayHighScores();
