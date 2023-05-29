@@ -129,6 +129,8 @@ function endQuiz() {
   initialsInput.value = "";
   initialsInput.focus();
   scoreForm.querySelector("button").disabled = false;
+
+  displayHighScores();
 }
 
 function getHighScore() {
@@ -161,6 +163,8 @@ function saveScore(event) {
 
   initialsInput.disabled = true;
   scoreForm.querySelector("button").disabled = true;
+
+  displayHighScores();
 }
 
 function restartQuiz() {

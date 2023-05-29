@@ -4,7 +4,7 @@ A quiz game that tests your knowledge about the Ultimate Fighter Championship (U
 
 ## Description
 
-The Ultimate Fighter Championship Quiz is a web-based game that presents you with six questions about the UFC. You have 60 seconds to answer each question. For every incorrect answer, 10 seconds are subtracted from the timer. At the end of the quiz, you can save your score by entering your initials. The game also displays the high score achieved so far.
+The Ultimate Fighter Championship Quiz is a web-based game that presents you with six questions about the UFC. You have 60 seconds to answer all of the questions. For every incorrect answer, 10 seconds are subtracted from the timer. At the end of the quiz, you can save your score by entering your initials. The game also displays the high score achieved so far.
 
 ## Instructions
 
