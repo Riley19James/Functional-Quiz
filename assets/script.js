@@ -162,3 +162,35 @@ function saveScore(event) {
   initialsInput.disabled = true;
   scoreForm.querySelector("button").disabled = true;
 }
+
+function restartQuiz() {
+  window.location.href = "index.html";
+}
+
+document.getElementById("try-again-btn").addEventListener("click", restartQuiz);
+
+function displayHighScores() {
+  const highScores = getHighScores();
+  highScoreList.innerHTML = "";
+
+  const scoresWithInitials = highScores.filter((score) => score.initials);
+
+  if (scoresWithInitials.length > 0) {
+    scoresWithInitials.forEach((score) => {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${score.initials} - ${score.score}`;
+      highScoreList.appendChild(listItem);
+    });
+  } else {
+    const listItem = document.createElement("li");
+    listItem.textContent = "No high scores with initials yet.";
+    highScoreList.appendChild(listItem);
+  }
+}
+
+function getHighScores() {
+  const highScoresJSON = localStorage.getItem("highScores");
+  return highScoresJSON ? JSON.parse(highScoresJSON) : [];
+}
+
+displayHighScores();

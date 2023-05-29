@@ -26,9 +26,5 @@ The Ultimate Fighter Championship Quiz is a web-based game that presents you wit
 - HTML
 - CSS
 - JavaScript
-
-
-
-
-
+- Google Fonts
 
